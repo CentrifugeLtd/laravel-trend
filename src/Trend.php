@@ -174,6 +174,7 @@ class Trend
             'mysql', 'mariadb' => new MySqlAdapter(),
             'sqlite' => new SqliteAdapter(),
             'pgsql' => new PgsqlAdapter(),
+            'sqlsrv' => new MsSqlServerAdapter(),
             default => throw new Error('Unsupported database driver.'),
         };
 
