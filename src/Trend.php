@@ -106,8 +106,8 @@ class Trend
                 {$aggregate}({$column}) as aggregate
             ")
             ->whereBetween($this->dateColumn, [$this->start, $this->end])
-            ->groupBy($this->dateAlias)
-            ->orderBy($this->dateAlias)
+            ->groupByRaw($this->getSqlDate())
+            ->orderByRaw($this->getSqlDate())
             ->get();
 
         return $this->mapValuesToDates($values);
